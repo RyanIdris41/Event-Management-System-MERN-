@@ -1,0 +1,41 @@
+Returns details of a specific venue.
+---
+tags:
+  - Venues
+parameters:
+  - name: venue_id
+    in: path
+    type: string
+    required: true
+    description: The id of the venue to retrieve
+responses:
+  404:
+    description: venue not found!
+  200:
+    description: request executed successfully
+    schema:
+      properties:
+        id:
+          type: string
+          description: The id of the venue
+          example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+        created_at:
+          type: string
+          description: time of creation of the venue
+          example: "2024-02-02 11:39:05"
+        updated_at:
+          type: string
+          description: time of last update of the venue
+          example: "2024-02-02 11:39:05"
+        name:
+          type: string
+          description: name of the venue
+          example: Empire State Convention Center
+        address:
+          type: string
+          description: location of the venue
+          example: New York, USA
+        country_id:
+          type: object
+          description: The country where the venue is located
+          example: {"created_at":"2024-02-02 11:39:05","id":"ae7e0a7d-e971-4379-885f-ea209b76de10","name":"United States","updated_at":"2024-02-02 11:39:05"}

@@ -1,0 +1,15 @@
+Deletes a venue record if it exists
+---
+tags:
+  - Venues
+parameters:
+  - name: venue_id
+    in: path
+    type: string
+    required: true
+    description: The unique id of the venue
+responses:
+  404:
+    description: venue not found!
+  200:
+    description: request executed successfully

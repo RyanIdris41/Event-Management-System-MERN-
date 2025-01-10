@@ -1,0 +1,41 @@
+Returns a list of all users from a given country
+---
+tags:
+  - Users
+parameters:
+  - name: country_id
+    in: path
+    type: string
+    required: true
+    description: The id of the country to retrieve users for
+responses:
+  200:
+    description: request executed successfully
+    schema:
+      type: array
+      items:
+        properties:
+          created_at:
+            type: string
+            description: time of creation of the instance
+            example: "2024-02-02 15:35:58"
+          updated_at:
+            type: string
+            description: time of last update of the instance
+            example: "2024-02-02 15:35:58"
+          id:
+            type: string
+            description: The uuid of the instance
+            example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+          email:
+            type: string
+            description: user's email
+            example: johndoe@mail.com
+          name:
+            type: string
+            description: the user's full name
+            example: John Doe
+          country_id:
+            type: object
+            description: an object with the country id and name
+            example: { "created_at": "2024-02-02 11:39:05","id": "ae7e0a7d-e971-4379-885f-ea209b76de10","name": "United States","updated_at": "2024-02-02 11:39:05" }

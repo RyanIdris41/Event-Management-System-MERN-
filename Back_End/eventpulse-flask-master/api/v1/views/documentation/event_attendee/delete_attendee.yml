@@ -1,0 +1,22 @@
+Deregister user from an event
+---
+tags:
+  - Event Attendees
+parameters:
+  - name: event_id
+    in: path
+    type: string
+    required: true
+    description: The id of the event
+    example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+  - name: user_id
+    in: path
+    type: string
+    required: true
+    description: The id of the user
+    example: ae7e0a7d-e971-4379-885f-ea209b76de10
+responses:
+  404:
+    description: event or user not found!
+  200:
+    description: request executed successfully

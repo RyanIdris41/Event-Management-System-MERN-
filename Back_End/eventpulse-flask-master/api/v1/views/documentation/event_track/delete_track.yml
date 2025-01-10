@@ -1,0 +1,16 @@
+Delete an event track
+---
+tags:
+  - Event Tracks
+parameters:
+  - name: event_track_id
+    in: path
+    type: string
+    required: true
+    description: The id of the event track to delete
+    example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+responses:
+  404:
+    description: event track not found!
+  200:
+    description: request executed successfully

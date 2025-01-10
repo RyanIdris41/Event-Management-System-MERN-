@@ -1,0 +1,15 @@
+Deletes a country record if it exists
+---
+tags:
+  - Countries
+parameters:
+  - name: country_id
+    in: path
+    type: string
+    required: true
+    description: The unique id of the country
+responses:
+  404:
+    description: user not found!
+  200:
+    description: request executed successfully

@@ -1,0 +1,57 @@
+Returns a list of all events from a given country.
+---
+tags:
+  - Events
+parameters:
+  - name: country_id
+    in: path
+    type: string
+    required: true
+    description: The id of the country to retrieve events for
+responses:
+  200:
+    description: request executed successfully
+    schema:
+      type: array
+      items:
+        properties:
+          id:
+            type: string
+            description: The id of the venue
+            example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+          created_at:
+            type: string
+            description: time of creation of the venue
+            example: "2024-02-02 11:39:05"
+          updated_at:
+             type: string
+             description: time of last update of the venue
+             example: "2024-02-02 11:39:05"
+          title:
+            type: string
+            description: name of the event
+            example: Tech Innovators Summit
+          description:
+            type: string
+            description: description of the event
+            example: Join us for a day of exploration into the latest technological innovations. Engage with industry leaders, attend insightful panels, and discover the future of technology.
+          start_date:
+             type: string
+             description: The date when the event is scheduled to start
+             example: "2024-02-02 11:00:00"
+          end_date:
+            type: string
+            description: The date when the event is scheduled to end
+            example: "2024-02-02 15:00:00"
+          user_id:
+            type: object
+            description: the owner of the event (the event organizer)
+            example: {"created_at":"2024-02-02 12:39:46","email":"austinlewis@example.net","id":"9544126b-b902-48b4-92a7-47d20f232cef","name":"Matthew Schultz","phone":"+1-754-235-3735","updated_at":"2024-02-02 12:39:46"}
+          venue_id:
+            type: object
+            description: the place where the event will take place
+            example: {"created_at":"2024-02-02 14:46:40","id":"01ed5701-595d-4a62-a75b-42826a605e91","name":"Empire State Convention Center","updated_at":"2024-02-02 14:46:40"}
+          banner_url:
+            type: string
+            description: The event banner(image)
+            example: "https://res.cloudinary.com/da3jmmlpj/image/upload/v1706916310/safespace_enlson.jpg"

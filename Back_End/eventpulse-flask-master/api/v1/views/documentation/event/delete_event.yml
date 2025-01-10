@@ -1,0 +1,15 @@
+Deletes an event record if it exists
+---
+tags:
+  - Events
+parameters:
+  - name: event_id
+    in: path
+    type: string
+    required: true
+    description: The unique id of the event
+responses:
+  404:
+    description: event not found!
+  200:
+    description: request executed successfully

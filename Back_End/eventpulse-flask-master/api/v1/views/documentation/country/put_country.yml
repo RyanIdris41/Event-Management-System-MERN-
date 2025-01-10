@@ -1,0 +1,46 @@
+Updates an existing country
+---
+tags:
+  - Countries
+parameters:
+  - name: country_id
+    in: path
+    type: string
+    required: true
+    description: The id of the user to update
+  - name: data
+    in: body
+    required: true
+    schema:
+      properties:
+        name:
+          type: string
+          description: The country's name
+          required: false
+          example: "Djibouti"
+
+responses:
+  404:
+    description: country not found!
+  400:
+    description: Not a valid JSON
+  200:
+    description: request executed successfully
+    schema:
+      properties:
+        id:
+          type: string
+          description: The uuid of the instance
+          example: 8bd45f9d-45c1-48b5-baaa-3204a7aa2473
+        created_at:
+          type: string
+          description: time of creation of the instance
+          example: "2024-02-02 11:39:05"
+        updated_at:
+          type: string
+          description: time of last update of the instance
+          example: "2024-02-02 11:39:05"
+        name:
+          type: string
+          description: The country's name
+          example: Djibouti

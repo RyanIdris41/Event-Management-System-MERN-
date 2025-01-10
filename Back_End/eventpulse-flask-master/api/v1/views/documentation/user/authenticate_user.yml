@@ -1,0 +1,58 @@
+Authenticates and returns user with the given credentials
+---
+tags:
+  - Authentication
+parameters:
+  - name: data
+    in: body
+    required: true
+    schema:
+        properties:
+          email:
+            type: string
+            description: The user's email.
+            required: true
+            example: "johndoe@mail.com"
+          password:
+            type: string
+            description: The user's password.
+            required: true
+            example: "my_password"
+
+responses:
+  400:
+    description: Not a valid JSON | email or password is missing
+  401:
+    description: Invalid credentials
+  200:
+    description: User successfully authenticated
+    schema:
+      properties:
+        created_at:
+          type: string
+          description: time of creation of the instance
+          example: "2024-02-02 15:35:58"
+        updated_at:
+          type: string
+          description: time of last update of the instance
+          example: "2024-02-02 15:35:58"
+        id:
+          type: string
+          description: The uuid of the instance
+          example: "9544126b-b902-48b4-92a7-47d20f232cef"
+        name:
+          type: string
+          description: The user's name.
+          example: "John Doe"
+        email:
+          type: string
+          description: The user's email.
+          example: "johndoe@mail.com"
+        phone:
+          type: string
+          description: The user's phone number.
+          example: "+25589485604"
+        country_id:
+          type: object
+          description: id of the user's country.
+          example: { "created_at": "2024-02-02 11:39:05","id": "ff97c7e1-f42d-4e0e-953a-28d038e39c86","name": "Saudi Arabia","updated_at": "2024-02-02 11:39:05" }

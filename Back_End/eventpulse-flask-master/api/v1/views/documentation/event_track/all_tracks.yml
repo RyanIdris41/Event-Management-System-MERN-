@@ -1,0 +1,52 @@
+Returns a list of all tracks of an event
+---
+tags:
+  - Event Tracks
+parameters:
+  - name: event_id
+    in: path
+    type: string
+    required: true
+    description: The id of the event to retrieve tracks for
+    example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+
+responses:
+  200:
+    description: request executed successfully
+    schema:
+      type: array
+      items:
+        properties:
+          created_at:
+            type: string
+            description: time of creation of the instance
+            example: "2024-02-02 15:35:58"
+          updated_at:
+             type: string
+             description: time of last update of the instance
+             example: "2024-02-02 15:35:58"
+          id:
+            type: string
+            description: The uuid of the instance
+            example: 4bdcvf9d-47c1-43b5-bafa-3204a7aa247f
+          title:
+             type: string
+             description: Title of the track
+             example: Conversations with Visionaries at Tech Innovators Summit
+          room:
+             type: string
+             description: The room number where the track will take place
+             example: B1
+          start_date:
+             type: string
+             description: when the track will start
+             example: "2024-02-02 15:00:00"
+          duration:
+            type: string
+            description: how long the track will take (in hrs)
+            example: 2
+          user_id:
+            type: string
+            description: the person responsible (speaker)
+            example: {"created_at":"2024-02-02 12:39:46","email":"austinlewis@example.net","id":"9544126b-b902-48b4-92a7-47d20f232cef","name":"Matthew Schultz","phone":"+17542353735","updated_at":"2024-02-02 12:39:46"}
+

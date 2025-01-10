@@ -1,0 +1,72 @@
+Creates a new user
+---
+tags:
+  - Users
+parameters:
+  - name: data
+    in: body
+    required: true
+    schema:
+        properties:
+          name:
+            type: string
+            description: The user's name.
+            required: true
+            example: "John Doe"
+          email:
+            type: string
+            description: The user's email.
+            required: true
+            example: "johndoe@mail.com"
+          password:
+            type: string
+            description: The user's password.
+            required: true
+            example: "my_password"
+          phone:
+            type: string
+            description: The user's phone number.
+            required: true
+            example: "+996736058376"
+          country_id:
+            type: string
+            description: id of the user's country.
+            required: true
+            example: "ff97c7e1-f42d-4e0e-953a-28d038e39c86"
+
+responses:
+  400:
+    description: Not a JSON or a user with the given email already exist or a required parameter is missing
+
+  201:
+    description: successfully created user
+    schema:
+      properties:
+        created_at:
+          type: string
+          description: time of creation of the instance
+          example: "2024-02-02 15:35:58"
+        updated_at:
+          type: string
+          description: time of last update of the instance
+          example: "2024-02-02 15:35:58"
+        id:
+          type: string
+          description: The uuid of the instance
+          example: "9544126b-b902-48b4-92a7-47d20f232cef"
+        name:
+          type: string
+          description: The user's name.
+          example: "John Doe"
+        email:
+          type: string
+          description: The user's email.
+          example: "johndoe@mail.com"
+        phone:
+          type: string
+          description: The user's phone number.
+          example: "+25589485604"
+        country_id:
+          type: object
+          description: id of the user's country.
+          example: { "created_at": "2024-02-02 11:39:05","id": "ff97c7e1-f42d-4e0e-953a-28d038e39c86","name": "Saudi Arabia","updated_at": "2024-02-02 11:39:05" }
